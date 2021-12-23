@@ -1,7 +1,5 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import ImageSlider from "../components/ImageSlider"
-import { SliderData } from "../components/SliderData"
 import { Fade } from "react-awesome-reveal";
 
 
