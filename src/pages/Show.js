@@ -4,6 +4,23 @@ import styled from "styled-components"
 
 const Image = styled.img`
     width: 300px;
+    box-shadow: 8px 10px 16px 0 rgb(0 0 0 / 20%);
+`
+const Button = styled.button`
+  background: white;
+  border-radius: 3px;
+  border: 2px solid maroon;
+  color: maroon;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+`
+const Input = styled.input`
+background: white;
+border-radius: 3px;
+border: 2px solid maroon;
+color: maroon;
+margin: 0 1em;
+padding: 0.25em 1em;
 `
 
 const Show = (props) => {
@@ -90,15 +107,15 @@ const Show = (props) => {
                 />
                 </fieldset>
                 <div className="form-btns">
-                    <input type="submit" value="Update Movie" />
-                    <button id="delete" onClick={removeMovie}> Delete Movie</button>
+                    <Input type="submit" value="Update Movie" />
+                    <Button id="delete" onClick={removeMovie}> Delete Movie</Button>
                 </div>
             </form>
         )
 
         return (
             <div className="movie-show">
-                <div className="show-container">
+                <div>
                     <Image src={movie.coverImage} alt={movie.title}/>
                     <div className="show-details">
                         <p>Title: {movie.title}</p>

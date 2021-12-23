@@ -33,6 +33,11 @@ const Inputs = styled.input`
     text-align: left;
     margin-bottom: 100px;
     box-shadow: 8px 10px 16px 0 rgb(0 0 0 / 20%)
+    background: white;
+    border-radius: 3px;
+    border: 2px solid maroon;
+    color: maroon;
+    padding: 0.25em 1em;
 `
 
 
