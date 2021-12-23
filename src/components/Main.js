@@ -6,6 +6,7 @@ import Show from "../pages/Show"
 const Main = (props) => {
     
     const [movies, setMovies] = useState(null)
+    //slash added to heroku URL
     const URL = "https://bscapstone-backend.herokuapp.com/movies/"
 
     // Calls backend API to get movie list
