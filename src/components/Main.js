@@ -53,7 +53,7 @@ const Main = (props) => {
         <main>
             <Routes>
                 <Route path="/" element={
-                <Index movies={movies} createMovie={createMovie} slides={SliderData}/>
+                <Index movies={movies} createMovie={createMovie} />
                 }/>
                 <Route path="/movies/:id" element={<Show movies={movies} updateMovie={updateMovie} deleteMovie={deleteMovie}/>}/>
             </Routes>

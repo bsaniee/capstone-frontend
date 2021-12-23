@@ -84,7 +84,6 @@ const Show = (props) => {
                     placeholder="Brief Description"
                     onChange={handleChange}
                 />
-                <StarRating handleChange={handleChange}/>
                 </fieldset>
                 <div className="form-btns">
                     <input type="submit" value="Update Movie" />

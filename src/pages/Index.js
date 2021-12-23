@@ -101,12 +101,11 @@ const Index = (props) => {
     if (props.movies) {
         return (
             <section>
-                <ImageSlider slides={SliderData} />
                 {form}
                 <input type="search" placeholder="Search Titles or Directors" onChange={(event) => setSearchValue(event.target.value)}/>
                 <div className="movie-container">
                     <Fade triggerOnce>
-                    {props.movies.filter((book) => {
+                    {props.movies.filter((movie) => {
                         if (searchValue === "") return movie
                         else if (movie.title.toLowerCase().includes(searchValue.toLowerCase())) return movie
                         else if (movie.director.toLowerCase().includes(searchValue.toLowerCase())) return movie
