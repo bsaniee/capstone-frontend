@@ -29,6 +29,7 @@ const Field = styled.div`
 
 const Field2 = styled.fieldset`
     background-color: lightblue;
+    margin-top: 30px;
 `
 const Inputs = styled.input`
     text-align: left;
