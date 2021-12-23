@@ -2,7 +2,8 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Fade } from "react-awesome-reveal";
 import styled from "styled-components"
-
+import { SliderData } from "../components/SliderData"
+import ImageSlider from "../components/ImageSlider";
 
 const Image = styled.img`
     width: 100px;
@@ -141,6 +142,7 @@ const Index = (props) => {
     if (props.movies) {
         return (
             <div>
+                <ImageSlider slides={SliderData} />
                 {form}
                 <input type="search" placeholder="Search Titles or Directors" onChange={(event) => setSearchValue(event.target.value)}/>
                 <Home>
