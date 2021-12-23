@@ -1,6 +1,38 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Fade } from "react-awesome-reveal";
+import styled from "styled-components"
+
+
+const Image = styled.img`
+    width: 100px;
+    float: center;
+`;
+
+const Details = styled.div`
+font-size: 10px;
+`;
+
+const Home = styled.section`
+    background-color: lightblue;
+    margin: 10px;
+    
+`
+const Field = styled.div`
+    text-align: left;
+    margin-left: 20px;
+    background-color: lightblue;
+    margin-bottom: 5px;
+`
+
+const Field2 = styled.fieldset`
+    background-color: lightblue;
+`
+const Inputs = styled.input`
+    text-align: left;
+    margin-right: 1001px;
+    margin-bottom: 100px;
+`
 
 
 const Index = (props) => {
@@ -35,75 +67,77 @@ const Index = (props) => {
 
     const form = (
         <form onSubmit={handleSubmit}>
-            <fieldset>
+            <Field2>
             <legend>Add a new Movie!</legend>
-            <div className="flex-pair">
+            <Field>
                 <label for="title">Title</label>
                 <input 
                     type="text"
                     value={newForm.title}
                     name="title"
                     id="title"
-                    // placeholder="Movie Title"
+                    placeholder="Movie Title"
                     onChange={handleChange}
                 />
-            </div>
-            <div className="flex-pair">
+            </Field>
+            <Field >
                 <label for="director">Director</label>
                 <input 
                     type="text"
                     value={newForm.director}
                     name="director"
                     id="director"
+                    placeholder="Director"
                     onChange={handleChange}
                 />
-            </div>
+            </Field>
 
-            <div className="flex-pair">
+            <Field>
                 <label for="genre">Genre</label>
                 <input 
                     type="text"
                     value={newForm.genre}
                     name="genre"
                     id="genre"
-                    // placeholder="Genre"
+                    placeholder="Genre"
                     onChange={handleChange}
                 />
-            </div> 
+            </Field> 
 
-            <div className="flex-pair">
+            <Field>
                 <label for="coverImage">Movie Poster</label>
                 <input 
                     type="text"
                     value={newForm.coverImage}
                     name="coverImage"
                     id="coverImage"
+                    placeholder="Poster URL"
                     onChange={handleChange}
                 />
-            </div>
+            </Field>
 
-            <div className="flex-pair">
+            <Field>
                 <label for="description">Description</label>
                 <input 
                     type="text"
                     value={newForm.description}
                     name="description"
                     id="description"
-                    // placeholder="Brief Description"
+                    placeholder="Synopsis"
                     onChange={handleChange}
                 />
-            </div>
-            </fieldset>
-            <input type="submit" value="Add Movie" id="add"/>
+            </Field>
+            </Field2>
+            <Inputs type="submit" value="Add Movie" id="add"/>
         </form>
     )
 
     if (props.movies) {
         return (
-            <section>
+            <div>
                 {form}
                 <input type="search" placeholder="Search Titles or Directors" onChange={(event) => setSearchValue(event.target.value)}/>
-                <div className="movie-container">
+                <Home>
                     <Fade triggerOnce>
                     {props.movies.filter((movie) => {
                         if (searchValue === "") return movie
@@ -113,24 +147,24 @@ const Index = (props) => {
                     .map((movie) => {
                         return (<div key={movie._id} className="movie">
                             <Link to={`/movies/${movie._id}`}>
-                                <img src={movie.coverImage}/>
-                                <div className="movie-details">
-                                    <h1>{movie.title}</h1>
-                                    <h2>by {movie.director}</h2>
-                                </div>
+                                <Image src={movie.coverImage}/>
+                                <Details className="movie-details">
+                                    <h2>{movie.title}</h2>
+                                    <h1>A film by {movie.director}</h1>
+                                </Details>
                             </Link>
                         </div>)
                     })}
                     </Fade>
-                </div>
-            </section>
+                </Home>
+            </div>
         )
     } else {
         return (
-            <section>
+            <Home>
                 {form}
                 <h1>Loading...</h1>
-            </section>
+            </Home>
         )
     }
 }

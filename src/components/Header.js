@@ -1,12 +1,18 @@
 import {Link} from "react-router-dom"
+import styled from "styled-components"
+
+const Title = styled.div`
+    font-size: 30px; 
+    color: Black;
+`
 
 const Header = (props) => {
     return (
         <nav className="nav">
             <Link to="/">
-                <div>
-                    <h1>Add to Bijan's Movie List</h1>
-                </div>
+                <Title>
+                    <h1>Bijan's Movie List</h1>
+                </Title>
             </Link>
         </nav>
     )

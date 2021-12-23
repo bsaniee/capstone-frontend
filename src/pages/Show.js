@@ -1,6 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react";
+import styled from "styled-components"
 
+const Image = styled.img`
+    width: 300px;
+`
 
 const Show = (props) => {
     const navigate = useNavigate();
@@ -58,9 +62,9 @@ const Show = (props) => {
                 />
                 <input 
                     type="text"
-                    value={editForm.author}
-                    name="author"
-                    placeholder="Author"
+                    value={editForm.director}
+                    name="director"
+                    placeholder="Director"
                     onChange={handleChange}
                 />
                 <input 
@@ -74,7 +78,7 @@ const Show = (props) => {
                     type="text"
                     value={editForm.coverImage}
                     name="coverImage"
-                    placeholder="Movie Cover Image"
+                    placeholder="Poster URL Here"
                     onChange={handleChange}
                 />
                 <input 
@@ -87,7 +91,7 @@ const Show = (props) => {
                 </fieldset>
                 <div className="form-btns">
                     <input type="submit" value="Update Movie" />
-                    <button id="delete" onClick={removeMovie}><i id="trash-can-icon" class="fa fa-trash"></i> Delete Movie</button>
+                    <button id="delete" onClick={removeMovie}> Delete Movie</button>
                 </div>
             </form>
         )
@@ -95,12 +99,12 @@ const Show = (props) => {
         return (
             <div className="movie-show">
                 <div className="show-container">
-                    <img src={movie.coverImage} alt={movie.title}/>
+                    <Image src={movie.coverImage} alt={movie.title}/>
                     <div className="show-details">
-                        <h1>{movie.title}</h1>
-                        <h2> {movie.director}</h2>
-                        <h4>{movie.description}</h4>
-                        <p>{movie.genre}</p>
+                        <p>Title: {movie.title}</p>
+                        <p>Director: {movie.director}</p>
+                        <p>Synopsis: {movie.description}</p>
+                        <p>Genre: {movie.genre}</p>
                     </div>
                 </div>
                 {form}
