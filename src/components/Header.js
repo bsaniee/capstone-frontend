@@ -5,7 +5,7 @@ const Header = (props) => {
         <nav className="nav">
             <Link to="/">
                 <div>
-                    <h1>Yellow Book Road <i class="fa fa-road" aria-hidden="true"></i></h1>
+                    <h1>Movie List</h1>
                 </div>
             </Link>
         </nav>
