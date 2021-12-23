@@ -5,16 +5,19 @@ const Title = styled.div`
     font-size: 30px; 
     color: Black;
 `
+const Navig = styled.nav`
+    background-color: lightblue;
+`
 
 const Header = (props) => {
     return (
-        <nav className="nav">
+        <Navig>
             <Link to="/">
                 <Title>
                     <h1>Bijan's Movie List</h1>
                 </Title>
             </Link>
-        </nav>
+        </Navig>
     )
 }
 

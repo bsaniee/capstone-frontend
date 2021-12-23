@@ -7,6 +7,7 @@ import styled from "styled-components"
 const Image = styled.img`
     width: 100px;
     float: center;
+    box-shadow: 8px 10px 16px 0 rgb(0 0 0 / 20%)
 `;
 
 const Details = styled.div`
@@ -30,8 +31,8 @@ const Field2 = styled.fieldset`
 `
 const Inputs = styled.input`
     text-align: left;
-    margin-right: 1001px;
     margin-bottom: 100px;
+    box-shadow: 8px 10px 16px 0 rgb(0 0 0 / 20%)
 `
 
 

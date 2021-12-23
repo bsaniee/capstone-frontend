@@ -4,7 +4,10 @@ import styled from "styled-components"
 
 const Home = styled.section`
     background-color: lightblue;
-    text-align: center;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 200px;
 `
 
 function App() {
